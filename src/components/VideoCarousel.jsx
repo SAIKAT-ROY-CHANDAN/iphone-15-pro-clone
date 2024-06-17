@@ -153,6 +153,7 @@ const VideoCarousel = () => {
   };
 
   const handleLoadedMetaData = (i, e) => setLoadedData((pre) => [...pre, e]);
+  
   return (
     <>
       <div className="flex items-center">
