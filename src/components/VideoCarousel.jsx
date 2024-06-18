@@ -1,10 +1,10 @@
-import { useRef } from "react";
-import { highlightsSlides } from "../constants";
-import { useState } from "react";
-import { useEffect } from "react";
-import { pauseImg, playImg, replayImg } from "../utils";
-import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/all";
+gsap.registerPlugin(ScrollTrigger);
+import { useEffect, useRef, useState } from "react";
+import { pauseImg, playImg, replayImg } from "../utils";
+import { highlightsSlides } from "../constants";
 
 const VideoCarousel = () => {
   const videoRef = useRef([]);
@@ -100,7 +100,7 @@ const VideoCarousel = () => {
       const animUpdate = () => {
         anim.progress(
           videoRef.current[videoId].currentTime /
-            hightlightsSlides[videoId].videoDuration
+          highlightsSlides[videoId].videoDuration
         );
       };
 
@@ -153,7 +153,7 @@ const VideoCarousel = () => {
   };
 
   const handleLoadedMetaData = (i, e) => setLoadedData((pre) => [...pre, e]);
-  
+
   return (
     <>
       <div className="flex items-center">
@@ -220,8 +220,8 @@ const VideoCarousel = () => {
               isLastVideo
                 ? () => handleProcess("video-reset")
                 : !isPlaying
-                  ? () => handleProcess("play")
-                  : () => handleProcess("pause")
+                ? () => handleProcess("play")
+                : () => handleProcess("pause")
             }
           />
         </button>

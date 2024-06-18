@@ -22,11 +22,11 @@ const Highlights = () => {
           <div className="flex flex-wrap items-end gap-5">
             <p className="link">
               Watch the film
-              <img className="ml-2" src={watchImg} alt="watch" srcset="" />
+              <img className="ml-2" src={watchImg} alt="watch" srcSet="" />
             </p>
             <p className="link">
               Watch the event
-              <img className="ml-2" src={rightImg} alt="right" srcset="" />
+              <img className="ml-2" src={rightImg} alt="right" srcSet="" />
             </p>
           </div>
         </div>
