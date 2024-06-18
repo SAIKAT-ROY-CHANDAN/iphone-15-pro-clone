@@ -43,6 +43,7 @@ const Hero = () => {
             muted
             playsInline={true}
             key={videoSrc}
+            loop
           >
             <source src={videoSrc} type="video/mp4" />
           </video>
